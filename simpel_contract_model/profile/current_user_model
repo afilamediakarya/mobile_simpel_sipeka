@@ -1,0 +1,15 @@
+{
+    "success": boolean,
+    "data": {
+        "id": int,
+        "name": String,
+        "nik": String,
+        "jenis_kelamin": String,
+        "alamat": String,
+        "kabupaten": String,
+        "kecamatan": String,
+        "kelurahan": String,
+        "role": String 
+    },
+    "message": String
+}

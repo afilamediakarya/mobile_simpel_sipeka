@@ -1,0 +1,33 @@
+{
+    "success": boolean,
+    "data": [
+        {
+            "id": int,
+            "nama": String,
+            "nik": String,
+            "tps": String/int,
+		 "kelurahan": String,
+		 "kecamatan": String,
+		 "image": String
+        },
+        {
+            "id": int,
+            "nama": String,
+            "nik": String,
+            "tps": String/int,
+		 "kelurahan": String,
+		 "kecamatan": String,
+		 "image": String
+        },
+        {
+            "id": int,
+            "nama": String,
+            "nik": String,
+            "tps": String/int,
+		 "kelurahan": String,
+		 "kecamatan": String,
+		 "image": String
+        }
+    ],
+    "message": String
+}

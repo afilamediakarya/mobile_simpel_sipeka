@@ -1,0 +1,23 @@
+Hit endpoint pake parameter id dari list suara
+
+{
+    "success": boolean,
+    "data": {
+        "id": int,
+        "nama": String,
+        "nik": String,
+        "jenis_kelamin": String,
+        "status_pernikahan": String,
+        "ttl": String,
+        "alamat": String,
+        "kecamatan": String, 
+        "kelurahan": String,
+        "tps": String/int,
+        "rw": String/int,
+        "rt": String/int,
+        "no_telepon": String,
+	   "image": String,
+        "alasan_memilih": String
+    },
+    "message": String
+}

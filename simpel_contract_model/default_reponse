@@ -1,0 +1,31 @@
+SATU DATA
+
+{
+    "success": boolean,
+    "data": {
+        "id": int,
+        "ket": String,
+    },
+    "message": String
+}
+
+LEBIH DARI SATU DATA / LIST
+
+{
+    "success": boolean,
+    "data": [
+        {
+            "id": int,
+            "ket": String,
+        },
+        {
+            "id": int,
+            "ket": String,
+        },
+        {
+            "id": int,
+            "ket": String,
+        }
+    ],
+    "message": String
+}

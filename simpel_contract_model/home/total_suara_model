@@ -1,0 +1,9 @@
+{
+    "success": boolean,
+    "data": {
+        "id": int,
+        "jumlah_suara": int,
+        "total_suara_komunitas": int
+    },
+    "message": String
+}

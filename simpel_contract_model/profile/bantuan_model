@@ -1,0 +1,10 @@
+{
+    "success": boolean,
+    "data": {
+        "id": int,
+        "alamat_url": String,
+        "no_telepon_url": String,
+        "wa_url": String
+    },
+    "message": String
+}

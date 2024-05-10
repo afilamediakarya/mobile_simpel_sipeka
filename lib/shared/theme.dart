@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+Color kPrimaryColor = const Color(0xff4B56D2);
+Color kWhiteColor = const Color(0xffF5F5F5);
+Color kPureWhiteColor = const Color(0xffffffff);
+Color kShadowColor = const Color(0xffEDF1F7);
+Color kBorderColor = const Color(0xffF1F0F1);
+Color kBlackColor = const Color(0xff151A30);
+Color kGreyColor = const Color(0xff8F9BB3);
+Color kGreyTextColor = const Color(0xff78777B);
+Color kBlackIconColor = const Color(0xff2E3A59);
+Color kDeepBlackColor = const Color(0xff000000);
+Color kBlueColor = const Color(0xff2F5ED9);
+Color kBorderDisabledFieldColor = const Color(0xffE4E9F2);
+Color kDisabledFieldColor = const Color.fromRGBO(143, 155, 179, 0.08);
+Color kTransparentColor = Colors.transparent;
+Color kBackgroundBlueColor = const Color(0xffEAEFFB);
+Color kUploadColor = const Color(0xffEBEDF2);
+Color kCameraPageColor = const Color(0xff1C313A);
+Color kBorderSuaraColor = const Color(0xffC5CEE0);
+Color kBorderPinColor = const Color(0xffF4BE2A);
+Color kBorderBlueColor = const Color(0xff1884F1);
+Color kGreenColor = const Color(0xff18A756);
+Color kSecondGreenColor = const Color(0xffB8E9CD);
+
+TextStyle blackTextStyle = GoogleFonts.inter(color: kBlackColor);
+TextStyle deepBlackTextStyle = GoogleFonts.inter(color: kDeepBlackColor);
+TextStyle primaryTextStyle = GoogleFonts.inter(color: kPrimaryColor);
+TextStyle whiteTextStyle = GoogleFonts.inter(color: kWhiteColor);
+TextStyle greyTextStyle = GoogleFonts.inter(color: kGreyTextColor);
+TextStyle blueTextStyle = GoogleFonts.inter(color: kBlueColor);

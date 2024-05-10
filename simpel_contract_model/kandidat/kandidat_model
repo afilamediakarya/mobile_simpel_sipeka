@@ -1,0 +1,20 @@
+{
+    "success": boolean,
+    "data": {
+        "id": int,
+        "nama": int,
+        "image": String (kalo ada),
+        "ttl": String,
+	  "visi": String,
+	  "misi": [
+			"value": String
+		    ],
+	  "riwayat_pendidikan": [
+					  "value": String
+					],
+	  "riwayat_pekerjaan" : [
+					  "value": String
+					]
+    },
+    "message": String
+}

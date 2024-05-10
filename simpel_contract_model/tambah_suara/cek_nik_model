@@ -1,0 +1,11 @@
+{
+    "success": boolean,
+    "data": {
+        "code": int,
+    },
+    "message": String
+}
+
+code = 1  => ("message": "NIK belum ada");
+code = 2  => ("message": "NIK sudah ada);
+code = 3  => ("message": "NIK telah terdaftar");

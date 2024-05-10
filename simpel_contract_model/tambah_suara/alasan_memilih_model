@@ -1,0 +1,18 @@
+{
+    "success": boolean,
+    "data": [
+        {
+            "id": int,
+            "alasan_memilih": String,
+        },
+        {
+            "id": int,
+            "alasan_memilih": String,
+        },
+        {
+            "id": int,
+            "alasan_memilih": String,
+        }
+    ],
+    "message": String
+}

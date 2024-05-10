@@ -1,0 +1,9 @@
+{
+    "success": boolean,
+    "data": {
+        "token": String,
+        "name": String,
+        "id": int
+    },
+    "message": String
+}

@@ -1,0 +1,27 @@
+Hit endpoint pake parameter (nama/nik/tps)
+Hasil bisa lebih dari 1
+
+{
+    "success": boolean,
+    "data": [
+        {
+            "id": int,
+            "nama": String,
+            "nik": String,
+            "tps": String/int
+        },
+        {
+            "id": int,
+            "nama": String,
+            "nik": String,
+            "tps": String/int
+        },
+        {
+            "id": int,
+            "nama": String,
+            "nik": String,
+            "tps": String/int
+        },
+    ],
+    "message": String
+}

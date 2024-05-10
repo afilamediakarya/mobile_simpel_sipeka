@@ -13,7 +13,7 @@ class BantuanPage extends StatelessWidget {
     launchWhatsAppUri({required noHp}) async {
       final link = WhatsAppUnilink(
         phoneNumber: noHp,
-        text: "Hai, mau tanya-tanya soal DIGIPAS dong?",
+        text: "Hai, mau tanya-tanya soal SIPEKA dong?",
       );
       await launchUrl(Uri.parse(link.asUri().toString()));
     }
@@ -153,7 +153,7 @@ class BantuanPage extends StatelessWidget {
                                   fontSize: 16, fontWeight: FontWeight.w500),
                             ),
                             Text(
-                              "CS DIGIPAS (0811 444 11201)",
+                              "CS SIPEKA (0811 444 11201)",
                               style: greyTextStyle.copyWith(
                                   fontSize: 12, fontWeight: FontWeight.w400),
                             ),
@@ -190,7 +190,7 @@ class BantuanPage extends StatelessWidget {
                                   fontSize: 16, fontWeight: FontWeight.w500),
                             ),
                             Text(
-                              "CS DIGIPAS (0811 444 11201)",
+                              "CS SIPEKA (0811 444 11201)",
                               style: greyTextStyle.copyWith(
                                   fontSize: 12, fontWeight: FontWeight.w400),
                             ),

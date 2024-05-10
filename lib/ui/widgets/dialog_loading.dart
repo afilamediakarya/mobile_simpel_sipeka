@@ -16,7 +16,10 @@ class DialogLoading extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const CircularProgressIndicator(),
+              CircularProgressIndicator(
+                backgroundColor: kPrimaryColor,
+                color: kSecondaryColor,
+              ),
               const SizedBox(
                 height: 28,
               ),

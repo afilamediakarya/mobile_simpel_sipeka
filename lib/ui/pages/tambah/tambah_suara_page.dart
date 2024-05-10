@@ -460,8 +460,11 @@ class TambahSuaraPage extends StatelessWidget {
                                       );
                                     } else if (state
                                         is ConfirmPhotoSwafotoLoading) {
-                                      return const Center(
-                                        child: CircularProgressIndicator(),
+                                      return Center(
+                                        child: CircularProgressIndicator(
+                                          backgroundColor: kPrimaryColor,
+                                          color: kSecondaryColor,
+                                        ),
                                       );
                                     } else if (state
                                         is ConfirmPhotoSwafotoFailed) {
@@ -550,8 +553,11 @@ class TambahSuaraPage extends StatelessWidget {
                                       );
                                     } else if (state
                                         is ConfirmPhotoRumahLoading) {
-                                      return const Center(
-                                        child: CircularProgressIndicator(),
+                                      return Center(
+                                        child: CircularProgressIndicator(
+                                          backgroundColor: kPrimaryColor,
+                                          color: kSecondaryColor,
+                                        ),
                                       );
                                     } else if (state
                                         is ConfirmPhotoRumahFailed) {
@@ -698,144 +704,142 @@ class TambahSuaraPage extends StatelessWidget {
                           const SizedBox(
                             height: 24,
                           ),
-                            Text(
-                              "Hubungan dengan TIM",
-                              style: blackTextStyle.copyWith(
-                                  fontSize: 12, fontWeight: FontWeight.w500),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            FormField<String>(validator: (value) {
-                              if (hdt == "-") {
-                                return "Pilih Hubungan terlebih dahulu !";
-                              }
-                              return null;
-                            }, builder: (formFieldState) {
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  DropdownSearch<String>(
-                                    itemAsString: (selectedItem) {
-                                      return selectedItem;
-                                    },
-                                    items: dataHubunganDenganTim,
-                                    onChanged: (value) {
-                                      hdt = value!;
-                                    },
-                                    dropdownDecoratorProps: DropDownDecoratorProps(
-                                        dropdownSearchDecoration: InputDecoration(
-                                            contentPadding:
-                                                const EdgeInsets.symmetric(
-                                                    vertical: 14,
-                                                    horizontal: 16),
-                                            filled: true,
-                                            fillColor: kPureWhiteColor,
-                                            enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color:
-                                                        kBorderDisabledFieldColor),
-                                                borderRadius:
-                                                    BorderRadius.circular(4)))),
-                                    dropdownBuilder: (context, selectedItem) {
-                                      return selectedItem == null
-                                          ? Text(
-                                              "Pilih Hubungan",
-                                              style: greyTextStyle.copyWith(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w400),
-                                            )
-                                          : Text(selectedItem);
-                                    },
-                                  ),
-                                  if (formFieldState.hasError)
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          top: 10, left: 12),
-                                      child: Text(
-                                        formFieldState.errorText!,
-                                        style: TextStyle(
-                                            fontStyle: FontStyle.normal,
-                                            fontSize: 12,
-                                            color: Colors.red[700],
-                                            height: 0.5),
-                                      ),
-                                    )
-                                ],
-                              );
-                            }),
-                            const SizedBox(
-                              height: 24,
-                            ),
-                            Text(
-                              "Status Pemilih",
-                              style: blackTextStyle.copyWith(
-                                  fontSize: 12, fontWeight: FontWeight.w500),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            FormField(validator: (value) {
-                              if (statusPemilih == "-") {
-                                return "Pilih Status Pemilih terlebih dahulu !";
-                              }
-                              return null;
-                            }, builder: (formFieldState) {
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  DropdownSearch(
-                                    itemAsString: (selectedItem) {
-                                      return selectedItem;
-                                    },
-                                    items: labelList,
-                                    onChanged: (value) {
-                                      String? correspondingValue =
-                                          dataStatusPemilihan.firstWhere((e) =>
-                                              e['label'] == value)['value'];
-                                      statusPemilih = correspondingValue!;
-                                    },
-                                    dropdownDecoratorProps: DropDownDecoratorProps(
-                                        dropdownSearchDecoration: InputDecoration(
-                                            contentPadding:
-                                                const EdgeInsets.symmetric(
-                                                    vertical: 14,
-                                                    horizontal: 16),
-                                            filled: true,
-                                            fillColor: kPureWhiteColor,
-                                            enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color:
-                                                        kBorderDisabledFieldColor),
-                                                borderRadius:
-                                                    BorderRadius.circular(4)))),
-                                    dropdownBuilder: (context, selectedItem) {
-                                      return selectedItem == null
-                                          ? Text(
-                                              "Pilih Status Pemilh",
-                                              style: greyTextStyle.copyWith(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w400),
-                                            )
-                                          : Text(selectedItem);
-                                    },
-                                  ),
-                                  if (formFieldState.hasError)
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          top: 10, left: 12),
-                                      child: Text(
-                                        formFieldState.errorText!,
-                                        style: TextStyle(
-                                            fontStyle: FontStyle.normal,
-                                            fontSize: 12,
-                                            color: Colors.red[700],
-                                            height: 0.5),
-                                      ),
-                                    )
-                                ],
-                              );
-                            }),
+                          Text(
+                            "Hubungan dengan TIM",
+                            style: blackTextStyle.copyWith(
+                                fontSize: 12, fontWeight: FontWeight.w500),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          FormField<String>(validator: (value) {
+                            if (hdt == "-") {
+                              return "Pilih Hubungan terlebih dahulu !";
+                            }
+                            return null;
+                          }, builder: (formFieldState) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DropdownSearch<String>(
+                                  itemAsString: (selectedItem) {
+                                    return selectedItem;
+                                  },
+                                  items: dataHubunganDenganTim,
+                                  onChanged: (value) {
+                                    hdt = value!;
+                                  },
+                                  dropdownDecoratorProps: DropDownDecoratorProps(
+                                      dropdownSearchDecoration: InputDecoration(
+                                          contentPadding:
+                                              const EdgeInsets.symmetric(
+                                                  vertical: 14, horizontal: 16),
+                                          filled: true,
+                                          fillColor: kPureWhiteColor,
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color:
+                                                      kBorderDisabledFieldColor),
+                                              borderRadius:
+                                                  BorderRadius.circular(4)))),
+                                  dropdownBuilder: (context, selectedItem) {
+                                    return selectedItem == null
+                                        ? Text(
+                                            "Pilih Hubungan",
+                                            style: greyTextStyle.copyWith(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400),
+                                          )
+                                        : Text(selectedItem);
+                                  },
+                                ),
+                                if (formFieldState.hasError)
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 10, left: 12),
+                                    child: Text(
+                                      formFieldState.errorText!,
+                                      style: TextStyle(
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 12,
+                                          color: Colors.red[700],
+                                          height: 0.5),
+                                    ),
+                                  )
+                              ],
+                            );
+                          }),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          Text(
+                            "Status Pemilih",
+                            style: blackTextStyle.copyWith(
+                                fontSize: 12, fontWeight: FontWeight.w500),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          FormField(validator: (value) {
+                            if (statusPemilih == "-") {
+                              return "Pilih Status Pemilih terlebih dahulu !";
+                            }
+                            return null;
+                          }, builder: (formFieldState) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DropdownSearch(
+                                  itemAsString: (selectedItem) {
+                                    return selectedItem;
+                                  },
+                                  items: labelList,
+                                  onChanged: (value) {
+                                    String? correspondingValue =
+                                        dataStatusPemilihan.firstWhere((e) =>
+                                            e['label'] == value)['value'];
+                                    statusPemilih = correspondingValue!;
+                                  },
+                                  dropdownDecoratorProps: DropDownDecoratorProps(
+                                      dropdownSearchDecoration: InputDecoration(
+                                          contentPadding:
+                                              const EdgeInsets.symmetric(
+                                                  vertical: 14, horizontal: 16),
+                                          filled: true,
+                                          fillColor: kPureWhiteColor,
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color:
+                                                      kBorderDisabledFieldColor),
+                                              borderRadius:
+                                                  BorderRadius.circular(4)))),
+                                  dropdownBuilder: (context, selectedItem) {
+                                    return selectedItem == null
+                                        ? Text(
+                                            "Pilih Status Pemilh",
+                                            style: greyTextStyle.copyWith(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400),
+                                          )
+                                        : Text(selectedItem);
+                                  },
+                                ),
+                                if (formFieldState.hasError)
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 10, left: 12),
+                                    child: Text(
+                                      formFieldState.errorText!,
+                                      style: TextStyle(
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 12,
+                                          color: Colors.red[700],
+                                          height: 0.5),
+                                    ),
+                                  )
+                              ],
+                            );
+                          }),
                           Visibility(
                               visible: roleSuara == "pin" ? true : false,
                               child: Column(
@@ -1081,8 +1085,11 @@ class TambahSuaraPage extends StatelessWidget {
                                         );
                                       } else if (state
                                           is ConfirmPhotoSwafotoLoading) {
-                                        return const Center(
-                                          child: CircularProgressIndicator(),
+                                        return Center(
+                                          child: CircularProgressIndicator(
+                                            backgroundColor: kPrimaryColor,
+                                            color: kSecondaryColor,
+                                          ),
                                         );
                                       } else if (state
                                           is ConfirmPhotoSwafotoFailed) {
@@ -1172,8 +1179,11 @@ class TambahSuaraPage extends StatelessWidget {
                                         );
                                       } else if (state
                                           is ConfirmPhotoRumahLoading) {
-                                        return const Center(
-                                          child: CircularProgressIndicator(),
+                                        return Center(
+                                          child: CircularProgressIndicator(
+                                            backgroundColor: kPrimaryColor,
+                                            color: kSecondaryColor,
+                                          ),
                                         );
                                       } else if (state
                                           is ConfirmPhotoRumahFailed) {

@@ -112,8 +112,11 @@ class SearchSuaraPage extends StatelessWidget {
                           );
                         }
                       } else if (state is SearchSuaraLoading) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
+                        return Center(
+                          child: CircularProgressIndicator(
+                backgroundColor: kPrimaryColor,
+                color: kSecondaryColor,
+              ),
                         );
                       } else if (state is SearchSuaraFailed) {
                         return Center(

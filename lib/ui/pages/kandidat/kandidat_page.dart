@@ -45,8 +45,11 @@ Terwujudnya Dewan Perwakilan Rakyat Daerah Kota Salatiga yang aspiratif, demokra
         body: SafeArea(child: BlocBuilder<KandidatCubit, KandidatState>(
           builder: (context, state) {
             if (state is KandidatLoading) {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return Center(
+                child: CircularProgressIndicator(
+                backgroundColor: kPrimaryColor,
+                color: kSecondaryColor,
+              ),
               );
             } else if (state is KandidatFailed) {
               return Center(

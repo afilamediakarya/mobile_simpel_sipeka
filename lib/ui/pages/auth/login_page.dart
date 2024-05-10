@@ -218,8 +218,11 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     builder: (context, state) {
                       if (state is LoginUserLoading) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
+                        return Center(
+                          child: CircularProgressIndicator(
+                            backgroundColor: kPrimaryColor,
+                            color: kSecondaryColor,
+                          ),
                         );
                       }
                       return CustomPrimaryButton(

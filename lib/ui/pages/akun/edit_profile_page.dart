@@ -39,7 +39,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
   final formKey = GlobalKey<FormState>();
 
   final TextEditingController nameController = TextEditingController(text: '');
-  final TextEditingController addressController = TextEditingController(text: '');
+  final TextEditingController addressController =
+      TextEditingController(text: '');
   String pathPhotoProfile = "";
 
   var nik,
@@ -164,8 +165,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               gender = state.dataUserModel.data.jenisKelamin;
               addressController.text = state.dataUserModel.data.alamat;
               foto = state.dataUserModel.data.foto;
-              kabupaten = state
-                  .dataUserModel.data.kabupatenKota;
+              kabupaten = state.dataUserModel.data.kabupatenKota;
               kecamatan = state.dataUserModel.data.kecamatan;
               kelurahan = state.dataUserModel.data.kelurahan;
               kelurahanId = state.dataUserModel.data.idDesa;
@@ -276,8 +276,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                         );
                                       } else if (state
                                           is ConfirmPhotoProfileLoading) {
-                                        return const Center(
-                                          child: CircularProgressIndicator(),
+                                        return Center(
+                                          child: CircularProgressIndicator(
+                                            backgroundColor: kPrimaryColor,
+                                            color: kSecondaryColor,
+                                          ),
                                         );
                                       } else if (state
                                           is ConfirmPhotoProfileFailed) {
@@ -307,7 +310,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                                             "${base_url.urlPhoto}$foto",
                                                         placeholder:
                                                             kTransparentImage,
-                                                            placeholderScale: 100,
+                                                        placeholderScale: 100,
                                                         imageErrorBuilder:
                                                             (context, error,
                                                                 stackTrace) {
@@ -581,8 +584,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   },
                                 );
                               } else if (state is ListKabupatenLoading) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
+                                return Center(
+                                  child: CircularProgressIndicator(
+                                    backgroundColor: kPrimaryColor,
+                                    color: kSecondaryColor,
+                                  ),
                                 );
                               } else if (state is ListKabupatenFailed) {
                                 return Center(
@@ -651,8 +657,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   },
                                 );
                               } else if (state is ListKecamatanLoading) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
+                                return Center(
+                                  child: CircularProgressIndicator(
+                                    backgroundColor: kPrimaryColor,
+                                    color: kSecondaryColor,
+                                  ),
                                 );
                               } else if (state is ListKecamatanFailed) {
                                 return Center(
@@ -673,7 +682,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        kecamatan==""?"Pilih Kecamatan":kecamatan,
+                                        kecamatan == ""
+                                            ? "Pilih Kecamatan"
+                                            : kecamatan,
                                         style: greyTextStyle.copyWith(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400),
@@ -743,8 +754,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   },
                                 );
                               } else if (state is ListKelurahanProfileLoading) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
+                                return Center(
+                                  child: CircularProgressIndicator(
+                                    backgroundColor: kPrimaryColor,
+                                    color: kSecondaryColor,
+                                  ),
                                 );
                               } else if (state is ListKelurahanProfileFailed) {
                                 return Center(
@@ -765,7 +779,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        kelurahan==""?"Pilih Kelurahan":kelurahan,
+                                        kelurahan == ""
+                                            ? "Pilih Kelurahan"
+                                            : kelurahan,
                                         style: greyTextStyle.copyWith(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400),
@@ -819,7 +835,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                                   return const DialogLoading();
                                                 } else if (state
                                                     is ChangeProfileFailed) {
-                                                      debugPrint("error edit profile : ${state.error}");
+                                                  debugPrint(
+                                                      "error edit profile : ${state.error}");
                                                   return DialogFailed(
                                                       desc: state.error);
                                                 } else if (state

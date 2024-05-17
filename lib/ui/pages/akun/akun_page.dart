@@ -275,7 +275,7 @@ class AkunPage extends StatelessWidget {
                               width: double.infinity,
                               padding: const EdgeInsets.symmetric(vertical: 12),
                               decoration: BoxDecoration(
-                                  color: kBlueColor,
+                                  color: kPrimaryColor,
                                   borderRadius: BorderRadius.circular(4)),
                               child: Center(
                                 child: Text(

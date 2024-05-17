@@ -127,8 +127,7 @@ class _SuaraPageState extends State<SuaraPage>
                             if (mode == LoadStatus.idle) {
                               body = const Text("Data kosong");
                             } else if (mode == LoadStatus.loading) {
-                              body =
-                                  const CircularProgressIndicator(); //used CircularProgressIndicator() for material design (android)
+                              body = CircularProgressIndicator(backgroundColor: kPrimaryColor, color: kSecondaryColor,); //used CircularProgressIndicator(backgroundColor: kPrimaryColor,) for material design (android)
                             } else if (mode == LoadStatus.failed) {
                               body = const Text("Load Failed!Click retry!");
                             } else if (mode == LoadStatus.canLoading) {
@@ -158,8 +157,7 @@ class _SuaraPageState extends State<SuaraPage>
                             if (mode == LoadStatus.idle) {
                               body = const Text("Data kosong");
                             } else if (mode == LoadStatus.loading) {
-                              body =
-                                  const CircularProgressIndicator(); //used CircularProgressIndicator() for material design (android)
+                              body = CircularProgressIndicator(backgroundColor: kPrimaryColor, color: kSecondaryColor,); //used CircularProgressIndicator(backgroundColor: kPrimaryColor,) for material design (android)
                             } else if (mode == LoadStatus.failed) {
                               body = const Text("Load Failed!Click retry!");
                             } else if (mode == LoadStatus.canLoading) {
@@ -193,8 +191,8 @@ class _SuaraPageState extends State<SuaraPage>
                       );
                     }
                   } else if (state is ListSuaraLoading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
+                    return Center(
+                      child: CircularProgressIndicator(backgroundColor: kPrimaryColor, color: kSecondaryColor,),
                     );
                   } else if (state is ListSuaraFailed) {
                     return Center(

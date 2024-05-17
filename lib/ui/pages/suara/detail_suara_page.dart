@@ -623,8 +623,11 @@ class DetailSuaraPage extends StatelessWidget {
                 ],
               );
             } else if (state is DetailSuaraLoading) {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return Center(
+                child: CircularProgressIndicator(
+                backgroundColor: kPrimaryColor,
+                color: kSecondaryColor,
+              ),
               );
             } else if (state is DetailSuaraFailed) {
               return Center(

@@ -379,10 +379,11 @@ class TambahDataPribadiPage extends StatelessWidget {
                                         filled: true,
                                         fillColor: kPureWhiteColor,
                                         enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(color: kBorderDisabledFieldColor),
+                                            borderSide: BorderSide(
+                                                color:
+                                                    kBorderDisabledFieldColor),
                                             borderRadius:
-                                                BorderRadius.circular(4)))
-                                    ),
+                                                BorderRadius.circular(4)))),
                                 dropdownBuilder: (context, selectedItem) {
                                   return selectedItem == null
                                       ? Text(
@@ -503,7 +504,8 @@ class TambahDataPribadiPage extends StatelessWidget {
                                   decoration: BoxDecoration(
                                       color: kPureWhiteColor,
                                       borderRadius: BorderRadius.circular(4),
-                                      border: Border.all(color: kBorderDisabledFieldColor)),
+                                      border: Border.all(
+                                          color: kBorderDisabledFieldColor)),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -635,21 +637,29 @@ class TambahDataPribadiPage extends StatelessWidget {
                                         selectedItem.text;
                                         return selectedItem.text;
                                       },
-                                      dropdownDecoratorProps: DropDownDecoratorProps(
-                                          dropdownSearchDecoration: InputDecoration(
-                                              filled: true,
-                                              fillColor: kPureWhiteColor,
-                                              contentPadding:
-                                                  const EdgeInsets.symmetric(
-                                                      vertical: 14,
-                                                      horizontal: 16),
-                                              enabledBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      color:
-                                                          kBorderDisabledFieldColor,),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          4)))),
+                                      dropdownDecoratorProps:
+                                          DropDownDecoratorProps(
+                                              dropdownSearchDecoration:
+                                                  InputDecoration(
+                                                      filled: true,
+                                                      fillColor:
+                                                          kPureWhiteColor,
+                                                      contentPadding:
+                                                          const EdgeInsets
+                                                                  .symmetric(
+                                                              vertical: 14,
+                                                              horizontal: 16),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color:
+                                                                    kBorderDisabledFieldColor,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4)))),
                                       onChanged: (value) {
                                         idKelurahan = value!.id;
                                         kelurahan = value.text;
@@ -669,8 +679,11 @@ class TambahDataPribadiPage extends StatelessWidget {
                                       },
                                     );
                                   } else if (state is ListKelurahanLoading) {
-                                    return const Center(
-                                      child: CircularProgressIndicator(),
+                                    return Center(
+                                      child: CircularProgressIndicator(
+                                        backgroundColor: kPrimaryColor,
+                                        color: kSecondaryColor,
+                                      ),
                                     );
                                   } else if (state is ListKelurahanFailed) {
                                     return Center(
@@ -922,8 +935,11 @@ class TambahDataPribadiPage extends StatelessWidget {
                           },
                           builder: (context, state) {
                             if (state is TambahDataSuaraSementaraLoading) {
-                              return const Center(
-                                child: CircularProgressIndicator(),
+                              return Center(
+                                child: CircularProgressIndicator(
+                                  backgroundColor: kPrimaryColor,
+                                  color: kSecondaryColor,
+                                ),
                               );
                             }
                             return CustomPrimaryButton(
@@ -971,22 +987,25 @@ class TambahDataPribadiPage extends StatelessWidget {
                                             .read<
                                                 TambahDataSuaraSementaraCubit>()
                                             .tambahDataSuaraSementara(
-                                              data: TambahDataSuaraSementaraModel(
-                                                nik: nikController.text, 
-                                                noKK: noKKController.text, 
-                                                name: nameController.text, 
-                                                jenisKelamin: jenisKelamin, 
-                                                statusPerkawinan: statusKawin, 
-                                                tempatLahir: tempatLahirController.text, 
-                                                tanggalLahir: selectedDateBirth, 
-                                                address: addressController.text, 
-                                                idKelurahan: idKelurahan.toString(), 
-                                                kelurahan: kelurahan, 
-                                                rt: rtController.text, 
-                                                rw: rwController.text, 
+                                              data:
+                                                  TambahDataSuaraSementaraModel(
+                                                nik: nikController.text,
+                                                noKK: noKKController.text,
+                                                name: nameController.text,
+                                                jenisKelamin: jenisKelamin,
+                                                statusPerkawinan: statusKawin,
+                                                tempatLahir:
+                                                    tempatLahirController.text,
+                                                tanggalLahir: selectedDateBirth,
+                                                address: addressController.text,
+                                                idKelurahan:
+                                                    idKelurahan.toString(),
+                                                kelurahan: kelurahan,
+                                                rt: rtController.text,
+                                                rw: rwController.text,
                                                 tps: tpsController.text,
-                                                ),
-                                                );
+                                              ),
+                                            );
                                       }
                                     }
                                   }

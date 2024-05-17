@@ -86,12 +86,19 @@ class _SplashSecondPageState extends State<SplashSecondPage>
                     height: 59,
                   ),
                   Text(
-                    "Selamat Datang\nDIGIPAS",
+                    "Selamat Datang\nSIPEKA",
                     textAlign: TextAlign.center,
-                    style: primaryTextStyle.copyWith(
+                    style: secondaryTextStyle.copyWith(
                         fontSize: 24, fontWeight: FontWeight.w600),
                   ),
-                  const SizedBox(height: 58,)
+                  const SizedBox(height: 8,),
+                  Text(
+                    "Sistem Informasi Pemilihan Kepala Daerah",
+                    textAlign: TextAlign.center,
+                    style: blackTextStyle.copyWith(
+                        fontSize: 16, fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(height: 50,)
                 ],
               )),
         ],

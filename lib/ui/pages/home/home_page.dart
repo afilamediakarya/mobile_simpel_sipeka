@@ -185,8 +185,11 @@ class _HomePageState extends State<HomePage>
                       child: Text(state.error),
                     );
                   } else if (state is KandidatLoading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
+                    return Center(
+                      child: CircularProgressIndicator(
+                        backgroundColor: kPrimaryColor,
+                        color: kSecondaryColor,
+                      ),
                     );
                   } else if (state is KandidatSuccess) {
                     return Container(
@@ -236,27 +239,30 @@ class _HomePageState extends State<HomePage>
                     } else {
                       List valuePengumuman = [];
 
-                    for (var item in state.dataPengumuman) {
-                      valuePengumuman.add('${item.deskripsi} - ');
-                    }
-                    String pengumumanFormatted = valuePengumuman.join('');
-                    return Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
-                      height: 24,
-                      child: Marquee(
-                        text: pengumumanFormatted,
-                        style: primaryTextStyle.copyWith(
-                            fontWeight: FontWeight.w600),
-                      ),
-                    );
+                      for (var item in state.dataPengumuman) {
+                        valuePengumuman.add('${item.deskripsi} - ');
+                      }
+                      String pengumumanFormatted = valuePengumuman.join('');
+                      return Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        height: 24,
+                        child: Marquee(
+                          text: pengumumanFormatted,
+                          style: primaryTextStyle.copyWith(
+                              fontWeight: FontWeight.w600),
+                        ),
+                      );
                     }
                   } else if (state is DataPengumumanFailed) {
                     return Center(
                       child: Text(state.error),
                     );
                   } else {
-                    return const Center(
-                      child: CircularProgressIndicator(),
+                    return Center(
+                      child: CircularProgressIndicator(
+                        backgroundColor: kPrimaryColor,
+                        color: kSecondaryColor,
+                      ),
                     );
                   }
                 },
@@ -302,7 +308,7 @@ class _HomePageState extends State<HomePage>
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: kBorderBlueColor),
+                                              color: kBorderPrimaryColor),
                                           borderRadius:
                                               BorderRadius.circular(8)),
                                       child: Column(
@@ -491,7 +497,7 @@ class _HomePageState extends State<HomePage>
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
-                                                    color: kBorderBlueColor),
+                                                    color: kBorderPrimaryColor),
                                                 borderRadius:
                                                     BorderRadius.circular(8)),
                                             child: Column(
@@ -541,7 +547,7 @@ class _HomePageState extends State<HomePage>
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
-                                                    color: kBorderBlueColor),
+                                                    color: kBorderPrimaryColor),
                                                 borderRadius:
                                                     BorderRadius.circular(8)),
                                             child: Column(
@@ -588,16 +594,22 @@ class _HomePageState extends State<HomePage>
                               ),
                             );
                           } else if (state is TotalSuaraLoading) {
-                            return const Center(
-                              child: CircularProgressIndicator(),
+                            return Center(
+                              child: CircularProgressIndicator(
+                                backgroundColor: kPrimaryColor,
+                                color: kSecondaryColor,
+                              ),
                             );
                           } else if (state is TotalSuaraFailed) {
                             return Center(
                               child: Text(state.error),
                             );
                           } else {
-                            return const Center(
-                              child: CircularProgressIndicator(),
+                            return Center(
+                              child: CircularProgressIndicator(
+                                backgroundColor: kPrimaryColor,
+                                color: kSecondaryColor,
+                              ),
                             );
                           }
                         },
@@ -624,16 +636,17 @@ class _HomePageState extends State<HomePage>
                         context.read<NavbarCubit>().setPage(3);
                       },
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             "Lihat Semua",
                             style: primaryTextStyle.copyWith(
                                 fontSize: 14, fontWeight: FontWeight.w400),
                           ),
-                          Image.asset(
-                            "assets/ic_arrow_right.png",
-                            width: 24,
-                            height: 24,
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: kPrimaryColor,
+                            size: 18,
                           )
                         ],
                       ),
@@ -649,8 +662,11 @@ class _HomePageState extends State<HomePage>
                 child: BlocBuilder<ListSuaraCubit, ListSuaraState>(
                   builder: (context, state) {
                     if (state is ListSuaraLoading) {
-                      return const Center(
-                        child: CircularProgressIndicator(),
+                      return Center(
+                        child: CircularProgressIndicator(
+                          backgroundColor: kPrimaryColor,
+                          color: kSecondaryColor,
+                        ),
                       );
                     } else if (state is ListSuaraFailed) {
                       return Center(
@@ -738,8 +754,11 @@ class _HomePageState extends State<HomePage>
                                         ? state.dataNews.length
                                         : 3);
                               } else if (state is DataNewsLoading) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
+                                return Center(
+                                  child: CircularProgressIndicator(
+                                    backgroundColor: kPrimaryColor,
+                                    color: kSecondaryColor,
+                                  ),
                                 );
                               } else if (state is DataNewsFailed) {
                                 return Center(

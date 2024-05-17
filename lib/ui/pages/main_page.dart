@@ -156,7 +156,10 @@ class _MainPageState extends State<MainPage>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircularProgressIndicator(),
+              CircularProgressIndicator(
+                backgroundColor: kPrimaryColor,
+                color: kSecondaryColor,
+              ),
               const SizedBox(
                 height: 32,
               ),
@@ -365,11 +368,11 @@ class _MainPageState extends State<MainPage>
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
-                              color: kBackgroundBlueColor),
+                              color: kBackgroundRedColor),
                           child: Center(
                             child: Text(
                               "Batal",
-                              style: blueTextStyle.copyWith(
+                              style: primaryTextStyle.copyWith(
                                   fontSize: 16, fontWeight: FontWeight.w600),
                             ),
                           ),

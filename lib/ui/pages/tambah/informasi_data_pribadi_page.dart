@@ -117,9 +117,12 @@ class InformasiDataPribadiPage extends StatelessWidget {
                     child: BlocBuilder<PencarianNikCubit, PencarianNikState>(
                       builder: (context, state) {
                         if (state is PencarianNikLoading) {
-                          return const Expanded(
+                          return Expanded(
                             child: Center(
-                              child: CircularProgressIndicator(),
+                              child: CircularProgressIndicator(
+                                backgroundColor: kPrimaryColor,
+                                color: kSecondaryColor,
+                              ),
                             ),
                           );
                         } else if (state is PencarianNikFailed) {
@@ -128,8 +131,10 @@ class InformasiDataPribadiPage extends StatelessWidget {
                           );
                         } else if (state is PencarianNikSuccess) {
                           nikController.text = state.pencarianNikModel.data.nik;
-                          noKkController.text = state.pencarianNikModel.data.noKk;
-                          namaController.text = state.pencarianNikModel.data.nama;
+                          noKkController.text =
+                              state.pencarianNikModel.data.noKk;
+                          namaController.text =
+                              state.pencarianNikModel.data.nama;
                           tempatLahirController.text =
                               state.pencarianNikModel.data.tempatLahir;
                           alamatController.text =
@@ -142,21 +147,23 @@ class InformasiDataPribadiPage extends StatelessWidget {
                               state.pencarianNikModel.data.kelurahan.kelurahan;
                           kecamatan = state.pencarianNikModel.data.kelurahan
                               .kecamatan.kecamatan;
-                          idKelurahan = state.pencarianNikModel.data.kelurahan.id;
-                  
+                          idKelurahan =
+                              state.pencarianNikModel.data.kelurahan.id;
+
                           tanggalLahir =
                               state.pencarianNikModel.data.tanggalLahir;
-                  
+
                           context.read<JenisKelaminCubit>().setGender(
                               state.pencarianNikModel.data.jenisKelamin == "L"
                                   ? 0
                                   : 1);
-                  
+
                           statusKawin =
-                              state.pencarianNikModel.data.statusKawin == "Kawin"
+                              state.pencarianNikModel.data.statusKawin ==
+                                      "Kawin"
                                   ? "Kawin"
                                   : "Belum Kawin";
-                  
+
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -173,7 +180,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "NIK",
@@ -239,7 +247,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "No kartu Keluarga",
@@ -305,7 +314,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Nama Lengkap",
@@ -370,7 +380,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Jenis Kelamin",
@@ -392,7 +403,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                 children: [
                                                   Radio(
                                                       value: 0,
-                                                      activeColor: kPrimaryColor,
+                                                      activeColor:
+                                                          kPrimaryColor,
                                                       groupValue: state,
                                                       onChanged: (dynamic val) {
                                                         context
@@ -406,7 +418,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                         blackTextStyle.copyWith(
                                                             fontSize: 16,
                                                             fontWeight:
-                                                                FontWeight.w500),
+                                                                FontWeight
+                                                                    .w500),
                                                   ),
                                                 ],
                                               ),
@@ -414,7 +427,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                 children: [
                                                   Radio(
                                                       value: 1,
-                                                      activeColor: kPrimaryColor,
+                                                      activeColor:
+                                                          kPrimaryColor,
                                                       groupValue: state,
                                                       onChanged: (dynamic val) {
                                                         context
@@ -428,7 +442,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                         blackTextStyle.copyWith(
                                                             fontSize: 16,
                                                             fontWeight:
-                                                                FontWeight.w500),
+                                                                FontWeight
+                                                                    .w500),
                                                   )
                                                 ],
                                               )
@@ -456,7 +471,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Status Pernikahan",
@@ -491,7 +507,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             4)))),
-                                        dropdownBuilder: (context, selectedItem) {
+                                        dropdownBuilder:
+                                            (context, selectedItem) {
                                           return selectedItem == null
                                               ? Text(
                                                   "Pilih Status Pernikahan",
@@ -523,7 +540,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Tempat Lahir",
@@ -589,7 +607,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Tanggal Lahir",
@@ -607,10 +626,10 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                               builder: (BuildContext context) {
                                                 return Container(
                                                   height: 100,
-                                                  margin:
-                                                      const EdgeInsets.symmetric(
-                                                          vertical: 64,
-                                                          horizontal: 16),
+                                                  margin: const EdgeInsets
+                                                          .symmetric(
+                                                      vertical: 64,
+                                                      horizontal: 16),
                                                   decoration: BoxDecoration(
                                                       color: kWhiteColor,
                                                       borderRadius:
@@ -640,19 +659,25 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              BlocBuilder<DateBirthCubit, String>(
+                                              BlocBuilder<DateBirthCubit,
+                                                  String>(
                                                 builder: (context, state) {
                                                   return Text(
                                                     tanggalLahir,
-                                                    style: tanggalLahir == "init"
-                                                        ? greyTextStyle.copyWith(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight.w400)
-                                                        : blackTextStyle.copyWith(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight.w400),
+                                                    style: tanggalLahir ==
+                                                            "init"
+                                                        ? greyTextStyle
+                                                            .copyWith(
+                                                                fontSize: 14,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400)
+                                                        : blackTextStyle
+                                                            .copyWith(
+                                                                fontSize: 14,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400),
                                                   );
                                                 },
                                               ),
@@ -685,7 +710,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Alamat",
@@ -751,7 +777,8 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Kelurahan/Desa",
@@ -776,7 +803,7 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                 text: element['text'],
                                               ));
                                             });
-                  
+
                                             int indexSelectedFirst =
                                                 allKelurahanData.indexWhere(
                                                     (element) =>
@@ -801,8 +828,9 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                 selectedItem.text;
                                                 return selectedItem.text;
                                               },
-                                              selectedItem: allKelurahanData
-                                                  .elementAt(indexSelectedFirst),
+                                              selectedItem:
+                                                  allKelurahanData.elementAt(
+                                                      indexSelectedFirst),
                                               dropdownDecoratorProps:
                                                   DropDownDecoratorProps(
                                                       dropdownSearchDecoration:
@@ -830,7 +858,7 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                               onChanged: (value) {
                                                 idKelurahan = value!.id;
                                                 kelurahan = value.text;
-                  
+
                                                 context
                                                     .read<ListTpsCubit>()
                                                     .getTpsData(
@@ -846,8 +874,11 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                             );
                                           } else if (state
                                               is ListKelurahanLoading) {
-                                            return const Center(
-                                              child: CircularProgressIndicator(),
+                                            return Center(
+                                              child: CircularProgressIndicator(
+                                                backgroundColor: kPrimaryColor,
+                                                color: kSecondaryColor,
+                                              ),
                                             );
                                           } else if (state
                                               is ListKelurahanFailed) {
@@ -857,8 +888,10 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                           } else {
                                             return Container(
                                               width: double.infinity,
-                                              padding: const EdgeInsets.symmetric(
-                                                  vertical: 14, horizontal: 16),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 14,
+                                                      horizontal: 16),
                                               decoration: BoxDecoration(
                                                   border: Border.all(
                                                       color:
@@ -873,10 +906,12 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                                 children: [
                                                   Text(
                                                     "Pilih Kelurahan",
-                                                    style: greyTextStyle.copyWith(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w400),
+                                                    style:
+                                                        greyTextStyle.copyWith(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w400),
                                                   ),
                                                   Image.asset(
                                                     "assets/ic_arrow_down.png",
@@ -1085,7 +1120,6 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                   ]))
                                 ],
                               ),
-                              
                               const SizedBox(
                                 height: 32,
                               ),
@@ -1098,17 +1132,18 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                             backgroundColor: Colors.green,
                                             content: Text(
                                                 "Data DPT berhasil diupdate")));
-                  
+
                                     SharedPreference.nikDpt?.setString(
                                         "nik_dpt", nikController.text);
-                  
+
                                     context
                                         .read<ConfirmPhotoSwafotoCubit>()
                                         .deletePicture();
                                     context
                                         .read<ConfirmPhotoRumahCubit>()
                                         .deletePicture();
-                                    Navigator.pushNamed(context, "tambah-suara");
+                                    Navigator.pushNamed(
+                                        context, "tambah-suara");
                                   } else if (state is UpdateDataDptFailed) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                         SnackBar(
@@ -1118,8 +1153,11 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                 },
                                 builder: (context, state) {
                                   if (state is UpdateDataDptLoading) {
-                                    return const Center(
-                                      child: CircularProgressIndicator(),
+                                    return Center(
+                                      child: CircularProgressIndicator(
+                                        backgroundColor: kPrimaryColor,
+                                        color: kSecondaryColor,
+                                      ),
                                     );
                                   }
                                   return CustomPrimaryButton(
@@ -1127,44 +1165,50 @@ class InformasiDataPribadiPage extends StatelessWidget {
                                       onPressed: () {
                                         if (formKey.currentState!.validate()) {
                                           if (nikController.text == "" ||
-                                            noKkController.text == "" ||
-                                            namaController.text == "" ||
-                                            statusKawin == "init" ||
-                                            tempatLahirController.text == "" ||
-                                            tanggalLahir == "init" ||
-                                            alamatController.text == "" ||
-                                            kelurahan == "init" ||
-                                            tpsController.text == "" ||
-                                            rwController.text == "" ||
-                                            rtController.text == "") {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(const SnackBar(
-                                                  backgroundColor: Colors.red,
-                                                  content: Text(
-                                                      "Lengkapi form terlebih dahulu")));
-                                        } else {
-                                          context
-                                              .read<UpdateDataDptCubit>()
-                                              .updateDataDpt(
-                                                updateDataDptModel: UpdateDataDptModel(
-                                                  uuid: uuid, 
-                                                  tps: tpsController.text, 
-                                                  nik: nikController.text, 
-                                                  nama: namaController.text, 
-                                                  tempatLahir: tempatLahirController.text, 
-                                                  tanggalLahir: tanggalLahir, 
-                                                  jenisKelamin: jenisKelamin, 
-                                                  noKk: noKkController.text, 
-                                                  statusKawin: statusKawin, 
-                                                  alamat: alamatController.text, 
-                                                  kelurahan: kelurahan, 
-                                                  rt: rtController.text, 
-                                                  rw: rwController.text, 
-                                                  idDesa: idKelurahan.toString(),),
-                                                  );
+                                              noKkController.text == "" ||
+                                              namaController.text == "" ||
+                                              statusKawin == "init" ||
+                                              tempatLahirController.text ==
+                                                  "" ||
+                                              tanggalLahir == "init" ||
+                                              alamatController.text == "" ||
+                                              kelurahan == "init" ||
+                                              tpsController.text == "" ||
+                                              rwController.text == "" ||
+                                              rtController.text == "") {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(const SnackBar(
+                                                    backgroundColor: Colors.red,
+                                                    content: Text(
+                                                        "Lengkapi form terlebih dahulu")));
+                                          } else {
+                                            context
+                                                .read<UpdateDataDptCubit>()
+                                                .updateDataDpt(
+                                                  updateDataDptModel:
+                                                      UpdateDataDptModel(
+                                                    uuid: uuid,
+                                                    tps: tpsController.text,
+                                                    nik: nikController.text,
+                                                    nama: namaController.text,
+                                                    tempatLahir:
+                                                        tempatLahirController
+                                                            .text,
+                                                    tanggalLahir: tanggalLahir,
+                                                    jenisKelamin: jenisKelamin,
+                                                    noKk: noKkController.text,
+                                                    statusKawin: statusKawin,
+                                                    alamat:
+                                                        alamatController.text,
+                                                    kelurahan: kelurahan,
+                                                    rt: rtController.text,
+                                                    rw: rwController.text,
+                                                    idDesa:
+                                                        idKelurahan.toString(),
+                                                  ),
+                                                );
+                                          }
                                         }
-                                        }
-                                        
                                       });
                                 },
                               )
@@ -1613,8 +1657,11 @@ class InformasiDataPribadiPage extends StatelessWidget {
                           child: Text("Gagal memuat data"),
                         );
                       } else if (state is TambahDataSuaraSementaraLoading) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
+                        return Center(
+                          child: CircularProgressIndicator(
+                            backgroundColor: kPrimaryColor,
+                            color: kSecondaryColor,
+                          ),
                         );
                       } else {
                         return const Center(

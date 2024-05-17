@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.afila.simpel.sidrap">
+    package="com.afila.simpel.sipeka">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
    <application
-        android:label="DIGIPAS"
+        android:label="SIPEKA"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
